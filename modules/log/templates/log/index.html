@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Log{% endblock %}
+{% block content %}
+{%- for year, year_dates in dates|groupby('year') -%}
+<h2>{{ year }}</h2>
+<ul class="nav nav-pills">
+	{%- for month, days in year_dates|groupby('month') -%}
+	<li><a href="{{ url_for('log.day', year=days[0].year, month=days[0].month, day=days[0].day) }}">{{ days[0].strftime('%B') }}</a></li>
+	{%- endfor -%}
+</ul>
+{%- endfor -%}
+{% endblock %}

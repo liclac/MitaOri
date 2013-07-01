@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}UNTITLED{% endblock %} - Mitakihara Original</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="{{ url_for('index') }}">Mitakihara Original</a>
+				<ul class="nav">
+					<li><a href="{{ url_for('cast.index') }}">Cast</a></li>
+					<li><a href="{{ url_for('wiki.index') }}">Wiki</a></li>
+					<li><a href="{{ url_for('log.index') }}">Log</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12" id="content">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

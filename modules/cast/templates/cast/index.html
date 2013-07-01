@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Cast{% endblock %}
+{% block content %}
+<ul class="thumbnails">
+	{%- for character in characters -%}
+	<li class="span3 character">
+		<div class="thumbnail">
+			<img src="{{ character.avatar_url }}" />
+			<h4>{{ character.nickname }} <small>({{ character.name }})</small></h4>
+			<p>{{ character.bio }}</p>
+			<a href="{{ url_for('wiki.page', title=character.name.replace(' ', '_')) }}" class="btn btn-block">Wiki</a>
+		</div>
+	</li>
+	{%- endfor -%}
+</ul>
+{% endblock %}

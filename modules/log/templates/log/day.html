@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ date.strftime('%d %B %Y') }}{% endblock %}
+{% block content %}
+<div class="post-container">
+	{%- for post in posts %}
+	<div class="post">
+		<p class="post-nickname">{{ post.character.nickname }}:</p>
+		<p class="post-text">{{ post.text }}</p>
+		<p class="post-timestamp">[{{ post.posted.strftime("%H:%M") }}]</p>
+	</div>
+	{%- endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+.character img {
+	height:50px;
+}
+
+.post-container {
+	display:table;
+	width:100%;
+}
+.post {
+	display:table-row;
+}
+.post-nickname {
+	display:table-cell;
+	font-weight:200;
+}
+.post-text {
+	display:table-cell;
+}
+.post-timestamp {
+	display:table-cell;
+	text-align:right;
+	font-family:monospace;
+	font-size:0.75em;
+}
+
+@media (max-width: 767px) {
+	.post-timestamp {
+		display:none;
+	}
+}
+
+@media (min-width: 481px) {
+	.post-nickname {
+		width:100px;
+		text-align:right;
+		padding-right:1em;
+	}
+}
+
+@media (max-width: 480px) {
+	.post-container, .post, .post-nickname, .post-text {
+		display:block;
+		margin:0;
+	}
+	.post {
+		margin-bottom:10px;
+	}
+	.post-nickname {
+		text-align:left;
+	}
+	.post-text {
+		padding-left:10px;
+	}
+}
