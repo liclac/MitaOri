@@ -21,7 +21,7 @@ class CharacterAdminView(MitaOriModelView):
 class PostAdminView(MitaOriModelView):
 	model = Post
 	form_overrides = {'reply_to': TextField}
-	list_columns = ['character', 'text', 'posted', 'reply_to']
+	column_list = ['character', 'text', 'posted', 'reply_to']
 
 class WikiPageAdminView(MitaOriModelView):
 	model = WikiPage
