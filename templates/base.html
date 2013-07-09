@@ -6,17 +6,24 @@
 	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
-		<div class="navbar">
-			<div class="navbar-inner">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
 				<a class="brand" href="{{ url_for('index') }}">Mitakihara Original</a>
-				<ul class="nav">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<ul class="nav nav-collapse collapse">
 					<li><a href="{{ url_for('cast.index') }}">Cast</a></li>
 					<li><a href="{{ url_for('wiki.index') }}">Wiki</a></li>
 					<li><a href="{{ url_for('log.index') }}">Log</a></li>
 				</ul>
 			</div>
 		</div>
+	</div>
+	<div class="container" id="main-container">
 		<div class="row">
 			<div class="span12" id="content">
 				{% block content %}{% endblock %}
