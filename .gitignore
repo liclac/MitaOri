@@ -2,4 +2,5 @@
 *.pyc
 *.db
 config.py
+cache/*/*
 

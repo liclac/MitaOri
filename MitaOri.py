@@ -1,5 +1,4 @@
-import logging
-import os
+#import logging
 from flask import Flask, render_template, url_for
 from modules.cast.cast import mod as cast_mod
 from modules.log.log import mod as log_mod
@@ -10,9 +9,6 @@ from admin import admin
 # Uncomment to enable database debugging
 #logging.basicConfig()
 #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
-
-def path_for(p):
-	return os.path.join(os.path.abspath(os.path.dirname(__file__)), p)
 
 app = Flask(__name__)
 app.config.from_object('config')
