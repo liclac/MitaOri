@@ -16,18 +16,12 @@ class FileCache(object):
 	def get(self, key):
 		value = None
 		path = self._path_for_key(key)
-		print "Loading from %s" % path
 		if os.path.exists(path):
-			print "-> Exists!"
 			with open(path, 'rb') as f:
 				value = pickle.load(f)
-		else:
-			print "<- ...nope."
 		return value
 	
 	def set(self, key, value):
 		path = self._path_for_key(key)
-		print "Storing to %s" % path
-		print value
 		with open(path, 'wb') as f:
 			pickle.dump(value, f)

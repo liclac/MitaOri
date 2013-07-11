@@ -10,7 +10,8 @@ cache = FileCache('log')
 
 def get_dates():
 	query = db.session.query(func.DATE(Post.posted)).distinct()
-	return [ date[0] for date in query.all() ]
+	dates = [ date[0] for date in query.all() ]
+	return dates
 
 @mod.route('/')
 def index():
@@ -23,10 +24,13 @@ def day(year, month, day):
 	key = date.strftime('%Y_%m_%d')
 	data = cache.get(key)
 	if not data:
+		posts_query = Post.query.filter(func.DATE(Post.posted) == date).options(orm.subqueryload('character'))
+		back_date_query = db.session.query(func.DATE(Post.posted)).filter(Post.posted < date).order_by(Post.posted.desc()).first()
+		next_date_query = db.session.query(func.DATE(Post.posted)).filter(Post.posted > (date + datetime.timedelta(days=1))).order_by(Post.posted).first()
 		data = {
-			'posts': Post.query.filter(func.DATE(Post.posted) == date).options(orm.subqueryload('character')).all(),
-			'back_date': db.session.query(func.DATE(Post.posted)).filter(Post.posted < date).order_by(Post.posted.desc()).first()[0],
-			'next_date': db.session.query(func.DATE(Post.posted)).filter(Post.posted > (date + datetime.timedelta(days=1))).order_by(Post.posted).first()[0]
+			'posts': posts_query.all(),
+			'back_date': back_date_query[0] if back_date_query else None,
+			'next_date': next_date_query[0] if next_date_query else None
 		}
 		cache.set(key, data)
 	return render_template('log/day.html', date=date, posts=data['posts'], back_date=data['back_date'], next_date=data['next_date'])

@@ -2,8 +2,12 @@
 {% block title %}{{ date.strftime('%d %B %Y') }}{% endblock %}
 {% block navextra %}
 <ul class="nav pull-right nav-collapse collapse">
+	{%- if back_date %}
 	<li><a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a></li>
+	{%- endif %}
+	{%- if next_date %}
 	<li><a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a></li>
+	{%- endif %}
 </ul>
 {% endblock %}
 {% block content %}
