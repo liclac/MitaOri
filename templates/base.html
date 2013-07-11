@@ -4,6 +4,9 @@
 	<title>{% block title %}UNTITLED{% endblock %} - Mitakihara Original</title>
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
 	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+	{%- if request.endpoint.startswith('log.') %}
+	<link href="{{ url_for('log.data_characters_css') }}" rel="stylesheet" />
+	{%- endif %}
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -20,6 +23,7 @@
 					<li><a href="{{ url_for('wiki.index') }}">Wiki</a></li>
 					<li><a href="{{ url_for('log.index') }}">Log</a></li>
 				</ul>
+				{% block navextra %}{% endblock %}
 			</div>
 		</div>
 	</div>

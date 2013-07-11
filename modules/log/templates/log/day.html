@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 {% block title %}{{ date.strftime('%d %B %Y') }}{% endblock %}
+{% block navextra %}
+<ul class="nav pull-right nav-collapse collapse">
+	<li><a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a></li>
+	<li><a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a></li>
+</ul>
+{% endblock %}
 {% block content %}
 <div class="post-container">
 	{%- for post in posts %}
-	<div class="post">
+	<div class="post {{ post.character.username }}">
 		<p class="post-nickname">{{ post.character.nickname }}:</p>
 		<p class="post-text">{{ post.text }}</p>
 		<p class="post-timestamp">[{{ post.posted.strftime("%H:%M") }}]</p>

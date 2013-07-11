@@ -1,0 +1,6 @@
+{%- for character in characters %}
+.{{ character.username }} {
+	color:#{{ character.color or "777" }};
+	border-color:#{{ character.color or "777" }};
+}
+{%- endfor %}
