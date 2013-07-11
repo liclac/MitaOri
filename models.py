@@ -18,7 +18,7 @@ class Post(db.Model):
 	id = db.Column(db.BigInteger, primary_key=True)
 	character_id = db.Column(db.Integer, db.ForeignKey('character.id'))
 	character = db.relationship('Character', backref=db.backref('entries', lazy='dynamic'))
-	reply_to_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=True)
+	reply_to_id = db.Column(db.BigInteger, db.ForeignKey('post.id'), nullable=True)
 	reply_to = db.relationship('Post', remote_side=[id], backref=db.backref('replies'))
 	posted = db.Column(db.DateTime)
 	text = db.Column(db.Text)
