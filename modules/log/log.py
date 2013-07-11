@@ -37,5 +37,8 @@ def day(year, month, day):
 
 @mod.route('/data/characters.css')
 def data_characters_css():
-	characters = Character.query.all()
+	characters = cache.get('characters')
+	if not characters:
+		characters = Character.query.all()
+		cache.set('characters', characters)
 	return Response(render_template('log/characters.css', characters=characters), mimetype="text/css")
