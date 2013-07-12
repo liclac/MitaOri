@@ -14,9 +14,9 @@
 <div class="post-container">
 	{%- for post in posts %}
 	<div class="post {{ post.character.username }}">
-		<p class="post-nickname">{{ post.character.nickname }}:</p>
-		<p class="post-text">{{ post.text }}</p>
-		<p class="post-timestamp">[{{ post.posted.strftime("%H:%M") }}]</p>
+		<p class="nickname">{{ post.character.nickname }}:</p>
+		<p class="text">{{ post.text }}</p>
+		<p class="timestamp">[{{ post.posted.strftime("%H:%M") }}]</p>
 	</div>
 	{%- endfor %}
 </div>
