@@ -1,7 +1,8 @@
-@media (min-width: 980px){body{padding-top:60px}}
-#main-container{padding-bottom:20px}
+@media (min-width: 980px){body{padding-top:40px}}
+.navbar .date-nav{float:right !important}@media (max-width: 979px){.navbar .date-nav{float:none}}
+#main-container{padding-bottom:20px}#main-container .date-nav{display:table;width:100%}#main-container .date-nav li{display:table-cell;float:none;width:1%}#main-container .date-nav li:last-child{text-align:right}
 .character img{height:50px}
-.post-container{display:table;width:100%;border-spacing:0 .5em}.post-container .post{display:table-row}.post-container .post .nickname{display:table-cell;font-weight:200;font-size:.9em}@media (min-width: 480px){.post-container .post .nickname{min-width:100px;text-align:right}.post-container .post .nickname:after{content:" ";white-space:pre}}
+.post-container{display:table;width:100%;border-spacing:0 1em}.post-container .post{display:table-row}.post-container .post .nickname{display:table-cell;font-weight:200}@media (min-width: 480px){.post-container .post .nickname{min-width:100px;text-align:right;font-size:.9em;padding-right:.5em}}
 .post-container .post .text{display:table-cell;font-weight:450}
 .post-container .post .timestamp{display:table-cell;text-align:right;font-family:monospace;font-size:.75em}@media (max-width: 767px){.post-container .post .timestamp{display:none}}
 @media (max-width: 479px){.post-container{display:block}.post-container .post{display:block;margin:0;padding:10px 0}.post-container .post .nickname{display:block;text-align:left} .post-container .post .text{display:block;padding-left:1em}}

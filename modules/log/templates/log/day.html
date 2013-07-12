@@ -1,16 +1,41 @@
 {% extends "base.html" %}
 {% block title %}{{ date.strftime('%d %B %Y') }}{% endblock %}
 {% block navextra %}
-<ul class="nav pull-right nav-collapse collapse">
-	{%- if back_date %}
-	<li><a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a></li>
-	{%- endif %}
-	{%- if next_date %}
-	<li><a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a></li>
-	{%- endif %}
+<ul class="nav date-nav visible-desktop">
+	<li>
+		{%- if back_date -%}
+		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
+	<li>
+		{%- if next_date -%}
+		<a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
 </ul>
 {% endblock %}
 {% block content %}
+<ul class="nav nav-pills date-nav hidden-desktop">
+	<li>
+		{%- if back_date -%}
+		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
+	<li>
+		{%- if next_date -%}
+		<a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
+</ul>
+
 <div class="post-container">
 	{%- for post in posts %}
 	<div class="post {{ post.character.username }}">
@@ -20,4 +45,21 @@
 	</div>
 	{%- endfor %}
 </div>
+
+<ul class="nav nav-pills date-nav hidden-desktop">
+	<li>
+		{%- if back_date -%}
+		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
+	<li>
+		{%- if next_date -%}
+		<a href="{{ url_for('log.day', year=next_date.year, month=next_date.month, day=next_date.day) }}">Next&nbsp;&rarr;</a>
+		{%- else -%}
+		&nbsp;
+		{%- endif -%}
+	</li>
+</ul>
 {% endblock %}

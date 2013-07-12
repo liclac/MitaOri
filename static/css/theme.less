@@ -1,0 +1,46 @@
+@import "variables";
+@themeColor: #9ebad7;
+
+body {
+	background:@themeColor url('../img/background.png') fixed;
+	
+	@media @phoneDown {
+		padding-left:0;
+		padding-right:0;
+	}
+}
+
+.navbar-fixed-top {
+	margin-bottom:0;
+	
+	@media @desktopDown {
+		position:relative;
+		z-index:100;
+	}
+	
+	@media @phoneDown {
+		margin-left:0;
+		margin-right:0;
+	}
+}
+
+.navbar-inner {
+	background:rgba(255,255,255,0.85);
+}
+
+#main-container {
+	background-color:rgba(255,255,255,0.85);
+	padding:10px;
+	padding-top:20px;
+	
+	@media @phoneUp {
+		box-shadow:0 0 20px rgba(0,0,0,0.5);
+		margin-top:20px;
+		margin-bottom:20px;
+		border-radius:10px;
+	}
+	
+	@media @desktopUp {
+		padding-top:20px;
+	}
+}
