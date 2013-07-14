@@ -7,7 +7,7 @@ Mitakihara Original
 -------------------
 From the [site](http://macaronicode.se/MitaOri/):
 
-Mitakihara Original is a fan-written story set in the Puella Magi Madoka Magica universe. Through Twitter, a dedicated group of role-players creates stories following the daily lives of a group of teenagers dealing with the consequences of a hard truth they discover. Every player takes control of a character they created and writes storylines of their own, or with other players. All these plotlines are weaved together with a lot of improvisation to tell a tale unlike that of many other roleplaying efforts.
+> Mitakihara Original is a fan-written story set in the Puella Magi Madoka Magica universe. Through Twitter, a dedicated group of role-players creates stories following the daily lives of a group of teenagers dealing with the consequences of a hard truth they discover. Every player takes control of a character they created and writes storylines of their own, or with other players. All these plotlines are weaved together with a lot of improvisation to tell a tale unlike that of many other roleplaying efforts.
 
 Version History
 ---------------
