@@ -15,6 +15,7 @@ Version History
 	* Python + Flask and PostgreSQL
 	* Full rewrite, because Django is WAY too slow with large datasets
 	* Cleaner layout, better mobile support
+	* Integrated Wiki
 	* Big Red Button! (planned)
 * Version 2.1
 	* Backend switched to PostgreSQL for better performance
@@ -25,3 +26,18 @@ Version History
 * Version 1.0
 	* PHP and MySQL
 	* Big Red Button!
+
+Current Version Requirements
+----------------------------
+* Python 2.7
+	* Flask
+	* Flask-WTF
+	* Flask-Admin
+	* Flask-SQLAlchemy
+		* Obviously a database adapter to go with this
+	* markdown2
+
+Make sure to make the cache directory writable by the webserver, and to create a file called "config.py", containing:
+
+* `SECRET_KEY` - a long string used for hashing and CSRF protection
+* `SQLALCHEMY_DATABASE_URI` - connection string to the database
