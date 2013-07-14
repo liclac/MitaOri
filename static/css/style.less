@@ -31,9 +31,47 @@ body {
 	}
 }
 
-.character {
-	img {
-		height:50px;
+.characters {
+	li {
+		height:135px;
+	}
+	
+	.character {
+		display:block;
+		background-color:#fff;
+		color:#333;
+		
+		&:hover {
+			text-decoration:none;
+		}
+	}
+	
+	.avatar {
+		height:100px;
+		width:100px;
+		float:left;
+		overflow:hidden;
+		border:1px solid #ccc;
+		border-radius:20px;
+		
+		img {
+			min-width:100%;
+			min-height:100%;
+		}
+	}
+	.profile {
+		overflow:hidden;
+		padding:5px;
+		padding-left:10px;
+		
+		h4 {
+			margin:0;
+			margin-bottom:5px;
+			
+			a {
+				display:block;
+			}
+		}
 	}
 }
 

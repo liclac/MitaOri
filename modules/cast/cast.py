@@ -6,5 +6,5 @@ mod = Blueprint('cast', __name__,
 
 @mod.route('/')
 def index():
-	characters = Character.query.all()
-	return render_template('cast/index.html', characters=characters)
+	categories = CharacterCategory.query.all()
+	return render_template('cast/index.html', categories=categories)

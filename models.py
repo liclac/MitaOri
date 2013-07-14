@@ -10,9 +10,19 @@ class Character(db.Model):
 	avatar_url = db.Column(db.Text)
 	bio = db.Column(db.Text)
 	color = db.Column(db.String(6))
+	category_id = db.Column(db.Integer, db.ForeignKey('character_category.id'), nullable=True)
+	category = db.relationship('CharacterCategory', backref=db.backref('characters', lazy='dynamic'))
 	
 	def __str__(self):
 		return self.name
+
+class CharacterCategory(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	title = db.Column(db.String(50))
+	weight = db.Column(db.Integer, nullable=False, default=0)
+	
+	def __str__(self):
+		return "[%s] %s" % (self.weight, self.title)
 
 class Post(db.Model):
 	id = db.Column(db.BigInteger, primary_key=True)

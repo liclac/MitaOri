@@ -1,4 +1,4 @@
 body{background:#9ebad7 url('../img/background.png') fixed}@media (max-width: 479px){body{padding-left:0;padding-right:0}}
 .navbar-fixed-top{margin-bottom:0}@media (max-width: 979px){.navbar-fixed-top{position:relative;z-index:100}}@media (max-width: 479px){.navbar-fixed-top{margin-left:0;margin-right:0}}
 @media (min-width: 480px){.navbar-inner{background:rgba(255,255,255,0.85)}}
-#main-container{background-color:rgba(255,255,255,0.85);padding:20px 10px}@media (min-width: 980px){#main-container{padding-top:20px}}@media (min-width: 480px){#main-container{box-shadow:0 0 20px rgba(0,0,0,0.5);margin-top:20px;margin-bottom:20px;border-radius:10px}}@media (max-width: 479px){#main-container{position:absolute;top:51px;left:0;right:0;bottom:0}}
+#main-container{background-color:rgba(255,255,255,0.85);padding:20px 10px}@media (min-width: 980px){#main-container{padding-top:20px}}@media (min-width: 480px){#main-container{box-shadow:0 0 20px rgba(0,0,0,0.5);margin-top:20px;margin-bottom:20px;border-radius:10px}}@media (max-width: 479px){#main-container{position:absolute;padding-top:51px;top:0;left:0;right:0;min-height:100%}}
