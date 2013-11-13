@@ -5,6 +5,7 @@ from modules.log.log import mod as log_mod
 from modules.wiki.wiki import mod as wiki_mod
 from models import db
 from admin import admin
+from assets import assets
 
 # Uncomment to enable database debugging
 #logging.basicConfig()
@@ -20,6 +21,7 @@ app.register_blueprint(log_mod, url_prefix='/log')
 db.init_app(app)
 db.app = app			# Can we please have this bug fixed already?
 admin.init_app(app)
+assets.init_app(app)
 
 @app.route('/')
 def index():

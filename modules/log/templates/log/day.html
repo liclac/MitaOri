@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ date.strftime('%d %B %Y') }}{% endblock %}
 {% block navextra %}
-<ul class="nav date-nav visible-desktop">
+<ul class="nav navbar-nav navbar-right hidden-xs">
 	<li>
 		{%- if back_date -%}
 		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>
@@ -19,7 +19,7 @@
 </ul>
 {% endblock %}
 {% block content %}
-<ul class="nav nav-pills date-nav hidden-desktop">
+<ul class="nav nav-pills mo-nav-fullwidth visible-xs">
 	<li>
 		{%- if back_date -%}
 		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>
@@ -46,7 +46,7 @@
 	{%- endfor %}
 </div>
 
-<ul class="nav nav-pills date-nav hidden-desktop">
+<ul class="nav nav-pills mo-nav-fullwidth visible-xs">
 	<li>
 		{%- if back_date -%}
 		<a href="{{ url_for('log.day', year=back_date.year, month=back_date.month, day=back_date.day) }}">&larr;&nbsp;Back</a>

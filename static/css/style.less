@@ -1,11 +1,53 @@
-@import "variables";
+@import "../lib/bootstrap/less/bootstrap.less";
+@themeColor: #9ebad7;
 
 body {
-	@media @desktopUp {
-		padding-top:40px;
+	padding-top: 70px;
+	padding-bottom: 20px;
+}
+
+#main-container {
+	h1, h2, h3, h4, h5, h6 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	@media (max-width: @screen-xs-max) {
+		padding-top: 30px;
+		margin-top: -20px;
+		margin-bottom: -20px;
 	}
 }
 
+@media(min-width: @screen-sm-min) {
+	.post-container {
+		display: table;
+		width: 100%;
+		
+		>.post {
+			display: table-row;
+			
+			>p {
+				display: table-cell;
+			}
+		}
+	}
+}
+
+.post-container {
+	>.post {
+		>p {
+			&.timestamp {
+				@media(max-width: @screen-sm-max) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/*
 .navbar {
 	.date-nav {
 		float:right !important;
@@ -128,4 +170,7 @@ body {
 			}
 		}
 	}
-}
+}*/
+
+@import "util";
+@import "theme";

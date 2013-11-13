@@ -2,5 +2,8 @@
 *.pyc
 *.db
 config.py
+
 cache/*/*
+static/gen
+static/.webassets-cache
 

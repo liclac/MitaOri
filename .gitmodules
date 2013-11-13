@@ -1,0 +1,6 @@
+[submodule "lib/bootstrap"]
+	path = lib/bootstrap
+	url = git@github.com:twbs/bootstrap.git
+[submodule "static/lib/bootstrap"]
+	path = static/lib/bootstrap
+	url = https://github.com/twbs/bootstrap.git

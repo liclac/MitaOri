@@ -1,0 +1,18 @@
+// Make a nav take up the full width of its container
+.mo-nav-fullwidth {
+	width: 100%;
+	
+	// WHY DOES BOOTSTRAP !important THE display:block RULE IN .visible-xs!?
+	@media (max-width: @screen-xs-max) {
+		&.visible-xs { display: table !important; }
+	}
+	
+	li {
+		display: table-cell;
+		float: none;
+		text-align: center;
+		
+		&:first-child { text-align: left; }
+		&:last-child { text-align: right; }
+	}
+}
