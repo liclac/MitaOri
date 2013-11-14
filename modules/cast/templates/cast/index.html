@@ -3,22 +3,20 @@
 {% block content %}
 {%- for category in categories %}
 <h2>{{ category.title }}</h2>
-<ul class="characters thumbnails">
-	{%- for character in category.characters|sort(attribute='name') %}
-	<li class="span4">
-		<a href="{{ url_for('wiki.page', title=character.name.replace(' ', '_')) }}" class="character thumbnail clearfix">
+<div class="characters">
+	{% for character in category.characters|sort(attribute='name') %}
+	<div class="character-container col-lg-4 col-md-4">
+		<a href="{{ url_for('wiki.page', title=character.name.replace(' ', '_')) }}" class="character">
 			<div class="avatar">
 				<img src="{{ character.avatar_url.replace('_normal', '') }}" />
 			</div>
-			<div class="profile">
-				<h4>
-					{{ character.name }}
-				</h4>
-				<p>{{ character.bio }}</p>
+			<div class="content">
+				<h3>{{ character.name }}</h3>
+				<p>{{ character.bio }}</h3>
 			</div>
 		</a>
-	</li>
-	{%- endfor %}
-</ul>
+	</div>
+	{% endfor %}
+</div>
 {%- endfor %}
 {% endblock %}

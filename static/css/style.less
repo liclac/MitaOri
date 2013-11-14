@@ -47,6 +47,39 @@ body {
 	}
 }
 
+.characters {
+	.clearfix();
+	
+	.character {
+		display: block;
+		color: #333;
+		text-decoration: none;
+		border: 1px solid #ccc;
+		.clearfix();
+		
+		@media(min-width: @screen-md-min) {
+			height: 150px;
+		}
+		
+		.avatar {
+			float: left;
+			height: 100px;
+			width: 100px;
+			
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		
+		.content {
+			max-height: 100%;
+			overflow: scroll;
+			padding-left: 10px;
+		}
+	}
+}
+
 /*
 .navbar {
 	.date-nav {
