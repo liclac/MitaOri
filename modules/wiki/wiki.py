@@ -11,7 +11,7 @@ def wikify(s):
 
 @mod.route('/')
 def index():
-	return redirect(url_for('wiki.page', title='Main_Page'))
+	return redirect(url_for('wiki.page', title='Mitakihara_Original'))
 
 @mod.route('/<title>')
 def page(title):

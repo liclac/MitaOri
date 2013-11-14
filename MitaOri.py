@@ -1,8 +1,8 @@
 #import logging
-from flask import Flask, render_template, url_for
-from modules.cast.cast import mod as cast_mod
-from modules.log.log import mod as log_mod
-from modules.wiki.wiki import mod as wiki_mod
+from flask import Flask, render_template, url_for, redirect
+from modules.cast import cast
+from modules.log import log
+from modules.wiki import wiki
 from models import db
 from admin import admin
 from assets import assets
@@ -14,9 +14,9 @@ from assets import assets
 app = Flask(__name__)
 app.config.from_object('config')
 
-app.register_blueprint(cast_mod, url_prefix='/cast')
-app.register_blueprint(wiki_mod, url_prefix='/wiki')
-app.register_blueprint(log_mod, url_prefix='/log')
+app.register_blueprint(cast.mod, url_prefix='/cast')
+app.register_blueprint(wiki.mod, url_prefix='/wiki')
+app.register_blueprint(log.mod, url_prefix='/log')
 
 db.init_app(app)
 db.app = app			# Can we please have this bug fixed already?
@@ -25,7 +25,8 @@ assets.init_app(app)
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return wiki.page(title='Mitakihara_Original')
+	#return render_template('index.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
