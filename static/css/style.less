@@ -58,7 +58,7 @@ body {
 		.clearfix();
 		
 		@media(min-width: @screen-md-min) {
-			height: 150px;
+			height: 125px;
 		}
 		
 		.avatar {
@@ -73,9 +73,17 @@ body {
 		}
 		
 		.content {
+			padding-left: 10px;
+			padding-bottom: 0;
+			
+			// Make sure long bios don't break the layout!
 			max-height: 100%;
 			overflow: scroll;
-			padding-left: 10px;
+			text-overflow: ellipsis;
+			
+			p {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
